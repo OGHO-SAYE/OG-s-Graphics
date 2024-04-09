@@ -26,7 +26,7 @@ IF(WIN32)
     )
 
     # Add Assimp library path
-    link_directories(/path/to/assimp/lib)  # Update this path with the actual Assimp library path
+    link_directories(/src/assimp)  # Update this path with the actual Assimp library path
 
 ELSE()
     set(CMAKE_BUILD_TYPE Debug)
