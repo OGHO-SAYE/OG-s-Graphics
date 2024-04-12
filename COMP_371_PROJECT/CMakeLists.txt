@@ -29,11 +29,38 @@ IF(WIN32)
     link_directories(./lib)  # Update this path with the actual Assimp library path
 
     # Copy Assimp DLL to the output directory
-    file(COPY dlls/assimp-vc140-mt.dll DESTINATION ${CMAKE_BINARY_DIR}/Debug)
-    file(COPY dlls/assimp-vc140-mt.dll DESTINATION ${CMAKE_BINARY_DIR}/Release)
+    file(COPY path/to/assimp-vc140-mt.dll DESTINATION ${CMAKE_BINARY_DIR}/Debug)
+    file(COPY path/to/assimp-vc140-mt.dll DESTINATION ${CMAKE_BINARY_DIR}/Release)
+
 
 ELSE()
-    # Your configuration for non-Windows systems goes here
+    set(CMAKE_BUILD_TYPE Debug)
+
+    set(CMAKE_CXX_STANDARD 11)
+
+    set(CMAKE_PREFIX_PATH
+        /encs # For ENCS lab computers
+        /opt/local # Macports
+    )
+
+    find_package(OpenGL REQUIRED COMPONENTS OpenGL)
+    find_package(GLEW REQUIRED)
+    find_package(glfw3 REQUIRED
+        HINTS /encs/pkg/glfw-3.3.4/root # ENCS installation of glfw
+    )
+
+    set(ALL_LIBS
+        GLEW::glew
+        OpenGL::GL
+        glfw
+    )
+
+    # NOTE: ENCS glm installation is missing links to *.inl files so we need this line
+    include_directories(/encs/pkg/glm-0.9.9.8/root/include)
+
+    # Add Assimp library path
+    link_directories(./lib)
+
 ENDIF()
 
 AUX_SOURCE_DIRECTORY(src/learnopengl SOURCES)

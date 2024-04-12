@@ -18,7 +18,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <vector>
 #define TINYOBJLOADER_IMPLEMENTATION
-#include "tiny_obj_loader.h"
+
 
 #include "learnopengl/shader_m.h"
 #include "learnopengl/camera.h"
@@ -251,31 +251,6 @@ glEnableVertexAttribArray(0);
 
     cloudboxShader.use();
     cloudboxShader.setInt("cloudbox", 0);
-   
-
-        //Attempt Model loading using TinyObjLoader
-        // tinyobj::attrib_t attrib;
-        // std::vector<tinyobj::shape_t> shapes;
-        // std::vector<tinyobj::material_t> materials;
-        // std::string warn, err;
-
-        // bool ret = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, "../src/miniStadium/miniStadium.obj");
-
-        // if (!warn.empty()) {
-        //     std::cerr << "Warning: " << warn << std::endl;
-        // }
-
-        // if (!err.empty()) {
-        //     std::cerr << "Error: " << err << std::endl;
-        // }
-
-        // if (!ret) {
-        //     exit(1);
-        // }
-
-
-
-
     
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -348,45 +323,7 @@ glEnableVertexAttribArray(0);
         lightShader.setMat4("view", camera.GetViewMatrix());
         lightShader.setMat4("model", cubemodel);
         glBindVertexArray(cubeLightVAO);
-        glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
-
-        //Attempt to render the model using TinyObjLoader
-    //    for (size_t s = 0; s < shapes.size(); s++) {
-    //     for (size_t f = 0; f < shapes[s].mesh.indices.size(); f += 3) {
-    //         glBegin(GL_TRIANGLES);
-
-    //         // Get indices for vertex, normal, and texture coordinates
-    //         tinyobj::index_t idx0 = shapes[s].mesh.indices[f + 0];
-    //         tinyobj::index_t idx1 = shapes[s].mesh.indices[f + 1];
-    //         tinyobj::index_t idx2 = shapes[s].mesh.indices[f + 2];
-
-    //         // Retrieve vertex, normal, and texture coordinate data for each index
-    //         glm::vec3 vertex0(
-    //             attrib.vertices[3 * idx0.vertex_index + 0],
-    //             attrib.vertices[3 * idx0.vertex_index + 1],
-    //             attrib.vertices[3 * idx0.vertex_index + 2]
-    //         );
-    //         glm::vec3 vertex1(
-    //             attrib.vertices[3 * idx1.vertex_index + 0],
-    //             attrib.vertices[3 * idx1.vertex_index + 1],
-    //             attrib.vertices[3 * idx1.vertex_index + 2]
-    //         );
-    //         glm::vec3 vertex2(
-    //             attrib.vertices[3 * idx2.vertex_index + 0],
-    //             attrib.vertices[3 * idx2.vertex_index + 1],
-    //             attrib.vertices[3 * idx2.vertex_index + 2]
-    //         );
-
-    //         // Render the triangle by specifying its vertices
-    //         glVertex3f(vertex0.x, vertex0.y, vertex0.z);
-    //         glVertex3f(vertex1.x, vertex1.y, vertex1.z);
-    //         glVertex3f(vertex2.x, vertex2.y, vertex2.z);
-
-    //         glEnd();
-    //     }   
-    // }
-
-      
+        glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);      
 
         //draw cloudbox last
         glDepthFunc(GL_LEQUAL);  // change depth function so depth test passes when values are equal to depth buffer's content
