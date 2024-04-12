@@ -16,6 +16,9 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <vector>
+#define TINYOBJLOADER_IMPLEMENTATION
+#include "tiny_obj_loader.h"
 
 #include "learnopengl/shader_m.h"
 #include "learnopengl/camera.h"
@@ -27,50 +30,17 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
 unsigned int loadCubemap(vector<std::string> faces);
 
-//Additional Shaders
-const std::string phongVertex = "phong.vert.glsl";
-const std::string phongFragment = "phong.frag.glsl";
 
-const std::string blinnPhongVertex = "blinnPhong.vert.glsl";
-const std::string blinnPhongFragment = "blinnPhong.frag.glsl";
 
-Shader phongShader;
-Shader blinnPhongShader;
-
-Shader* currentShader;
-
-void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
-{
-    if(action != GLFW_PRESS)
-    {
-        return;
-    }
-
-    switch(key)
-    {
-        case GLFW_KEY_ESCAPE:
-            glfwSetWindowShouldClose(window, true);
-            break;
-        case GLFW_KEY_P:
-            currentShader = &phongShader;
-            currentShader->use();
-            break;
-        case GLFW_KEY_B:
-            currentShader = &blinnPhongShader;
-            currentShader->use();
-            break;
-       
-    }
-}
 
 
 
 // settings
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+const unsigned int SCR_WIDTH = 1200;
+const unsigned int SCR_HEIGHT = 800;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(5.0f, 5.0f,10.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -80,7 +50,6 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 const float pi = std::acos(-1.0f);
-
 
 
 
@@ -131,32 +100,19 @@ int main()
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
 
-    try
-    {
-        phongShader.build(phongVertex, phongFragment);
-        blinnPhongShader.build(blinnPhongVertex, blinnPhongFragment);
-    }
-    catch (const std::runtime_error& e)
-    {
-        std::cerr << e.what() << std::endl;
-        glfwTerminate();
-        return -1;
-    }
     
-    currentShader = &phongShader;
-
-    float rot = 0.0f;
-
 
 
     // build and compile shaders
     // -------------------------
     Shader ourShader("../src/1.vertexShader.vs", "../src/1.fragmentShader.fs");
+    Shader lightShader("../shaders/phong.vert.glsl", "../shaders/phong.frag.glsl");
     Shader cloudboxShader("../src/cloudbox.vs", "../src/cloudbox.fs");
 
     // load models
     // -----------
     Model ourModel("../src/miniStadium/miniStadium.obj");
+   
 
 
     float cloudboxVertices[] = {
@@ -205,11 +161,11 @@ int main()
     };
 
 
-    unsigned int cloudboxVBO, cloudboxVAO;
+    unsigned int VBO, cloudboxVAO;
     glGenVertexArrays(1, &cloudboxVAO);
-    glGenBuffers(1, &cloudboxVBO);
+    glGenBuffers(1, &VBO);
     glBindVertexArray(cloudboxVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, cloudboxVBO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(cloudboxVertices), cloudboxVertices, GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
@@ -225,15 +181,97 @@ int main()
     };
 
     glm::vec3 lightPos{5.0f, 1.0f, 0.0f};
+    glm::vec3 cubeLightPosition(40.0f, 20.0f, 5.0f); // Adjust position as needed
+    glm::vec3 cubeLightScale(10.0f); // Adjust scale as needed
+
+  float cubeLightVertices[] = {
+    // Front face
+    -0.1f, -0.1f,  0.1f, 1.0f,
+     0.1f, -0.1f,  0.1f, 1.0f,
+     0.1f,  0.1f,  0.1f, 1.0f,
+    -0.1f,  0.1f,  0.1f, 1.0f,
+
+    // Back face
+    -0.1f, -0.1f, -0.1f, 1.0f,
+     0.1f, -0.1f, -0.1f, 1.0f,
+     0.1f,  0.1f, -0.1f, 1.0f,
+    -0.1f,  0.1f, -0.1f, 1.0f,
+
+    // Top face
+    -0.1f,  0.1f,  0.1f, 1.0f,
+     0.1f,  0.1f,  0.1f, 1.0f,
+     0.1f,  0.1f, -0.1f, 1.0f,
+    -0.1f,  0.1f, -0.1f, 1.0f,
+
+    // Bottom face
+    -0.1f, -0.1f,  0.1f, 1.0f,
+     0.1f, -0.1f,  0.1f, 1.0f,
+     0.1f, -0.1f, -0.1f, 1.0f,
+    -0.1f, -0.1f, -0.1f, 1.0f,
+
+    // Left face
+    -0.1f, -0.1f, -0.1f, 1.0f,
+    -0.1f, -0.1f,  0.1f, 1.0f,
+    -0.1f,  0.1f,  0.1f, 1.0f,
+    -0.1f,  0.1f, -0.1f, 1.0f,
+
+    // Right face
+     0.1f, -0.1f, -0.1f, 1.0f,
+     0.1f, -0.1f,  0.1f, 1.0f,
+     0.1f,  0.1f,  0.1f, 1.0f,
+     0.1f,  0.1f, -0.1f, 1.0f,
+};
+
+unsigned int cubeLightIndices[] = {
+    0, 1, 2, 2, 3, 0,        // Front face
+    4, 5, 6, 6, 7, 4,        // Back face
+    8, 9, 10, 10, 11, 8,     // Top face
+    12, 13, 14, 14, 15, 12,  // Bottom face
+    16, 17, 18, 18, 19, 16,  // Left face
+    20, 21, 22, 22, 23, 20   // Right face
+};
+
+
+    unsigned int cubeLightVAO, cubeLightVBO, cubeLightEBO;
+    glGenVertexArrays(1, &cubeLightVAO);
+    glGenBuffers(1, &cubeLightVBO);
+    glGenBuffers(1, &cubeLightEBO);
+
+    glBindVertexArray(cubeLightVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, cubeLightVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(cubeLightVertices), cubeLightVertices, GL_STATIC_DRAW);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, cubeLightEBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(cubeLightIndices), cubeLightIndices, GL_STATIC_DRAW);
+    // Set vertex attribute pointers
+   glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
 
 
     unsigned int cubemapTexture = loadCubemap(faces);
 
     cloudboxShader.use();
     cloudboxShader.setInt("cloudbox", 0);
-    currentShader->use();
+   
 
+        //Attempt Model loading using TinyObjLoader
+        // tinyobj::attrib_t attrib;
+        // std::vector<tinyobj::shape_t> shapes;
+        // std::vector<tinyobj::material_t> materials;
+        // std::string warn, err;
 
+        // bool ret = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, "../src/miniStadium/miniStadium.obj");
+
+        // if (!warn.empty()) {
+        //     std::cerr << "Warning: " << warn << std::endl;
+        // }
+
+        // if (!err.empty()) {
+        //     std::cerr << "Error: " << err << std::endl;
+        // }
+
+        // if (!ret) {
+        //     exit(1);
+        // }
 
 
 
@@ -241,6 +279,12 @@ int main()
     
     // draw in wireframe
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+    ourShader.use();
+    ourShader.setInt("material.diffuse", 0);
+    ourShader.setInt("material.specular", 1);
+    ourShader.setFloat("material.shininess", 32.0f);
+    
 
     // render loop
     // -----------
@@ -252,11 +296,6 @@ int main()
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
-       rot += deltaTime * pi/2; // pi/2 per second
-        rot = std::fmod(rot, 2*pi); // overflow prevention
-
-        lightPos.x = 5 * std::cos(rot);
-
 
         // input
         // -----
@@ -267,25 +306,87 @@ int main()
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-  
+        ourShader.use();
+        ourShader.setVec3("light.position", cubeLightPosition);
+        ourShader.setVec3("viewPos", camera.Position);
+
+        // light properties
+        // light properties
+        ourShader.setVec3("light.ambient", 0.4f, 0.4f, 0.4f); // increase ambient intensity
+        ourShader.setVec3("light.diffuse", 1.0f, 1.0f, 1.0f); // increase diffuse intensity
+        ourShader.setVec3("light.specular", 2.0f, 2.0f, 2.0f); // increase specular intensity
+
+
+        // material properties
+        ourShader.setFloat("material.specular", 64.0f);
+
+
 
         // don't forget to enable shader before setting uniforms
         ourShader.use();
-
-        
-
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.GetViewMatrix();
         ourShader.setMat4("projection", projection);
         ourShader.setMat4("view", view);
 
-        // render the loaded model
+        //render the loaded model with assimp model loader
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
         ourShader.setMat4("model", model);
         ourModel.Draw(ourShader);
+
+
+        
+        // Render cube light
+        lightShader.use();
+        glm::mat4 cubemodel = glm::mat4(1.0f);
+        cubemodel = glm::translate(cubemodel, cubeLightPosition);
+        cubemodel = glm::scale(cubemodel, cubeLightScale);
+        lightShader.setMat4("projection", glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f));
+        lightShader.setMat4("view", camera.GetViewMatrix());
+        lightShader.setMat4("model", cubemodel);
+        glBindVertexArray(cubeLightVAO);
+        glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
+
+        //Attempt to render the model using TinyObjLoader
+    //    for (size_t s = 0; s < shapes.size(); s++) {
+    //     for (size_t f = 0; f < shapes[s].mesh.indices.size(); f += 3) {
+    //         glBegin(GL_TRIANGLES);
+
+    //         // Get indices for vertex, normal, and texture coordinates
+    //         tinyobj::index_t idx0 = shapes[s].mesh.indices[f + 0];
+    //         tinyobj::index_t idx1 = shapes[s].mesh.indices[f + 1];
+    //         tinyobj::index_t idx2 = shapes[s].mesh.indices[f + 2];
+
+    //         // Retrieve vertex, normal, and texture coordinate data for each index
+    //         glm::vec3 vertex0(
+    //             attrib.vertices[3 * idx0.vertex_index + 0],
+    //             attrib.vertices[3 * idx0.vertex_index + 1],
+    //             attrib.vertices[3 * idx0.vertex_index + 2]
+    //         );
+    //         glm::vec3 vertex1(
+    //             attrib.vertices[3 * idx1.vertex_index + 0],
+    //             attrib.vertices[3 * idx1.vertex_index + 1],
+    //             attrib.vertices[3 * idx1.vertex_index + 2]
+    //         );
+    //         glm::vec3 vertex2(
+    //             attrib.vertices[3 * idx2.vertex_index + 0],
+    //             attrib.vertices[3 * idx2.vertex_index + 1],
+    //             attrib.vertices[3 * idx2.vertex_index + 2]
+    //         );
+
+    //         // Render the triangle by specifying its vertices
+    //         glVertex3f(vertex0.x, vertex0.y, vertex0.z);
+    //         glVertex3f(vertex1.x, vertex1.y, vertex1.z);
+    //         glVertex3f(vertex2.x, vertex2.y, vertex2.z);
+
+    //         glEnd();
+    //     }   
+    // }
+
+      
 
         //draw cloudbox last
         glDepthFunc(GL_LEQUAL);  // change depth function so depth test passes when values are equal to depth buffer's content
@@ -307,7 +408,7 @@ int main()
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-        currentShader = nullptr;
+    
 
 
     // glfw: terminate, clearing all previously allocated GLFW resources.

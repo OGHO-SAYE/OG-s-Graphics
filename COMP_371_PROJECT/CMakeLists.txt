@@ -26,7 +26,7 @@ IF(WIN32)
     )
 
     # Add Assimp library path
-    link_directories(/src/assimp/5.3.1/lib)  # Update this path with the actual Assimp library path
+    link_directories(./lib)  # Update this path with the actual Assimp library path
 
 ELSE()
     set(CMAKE_BUILD_TYPE Debug)
@@ -54,7 +54,7 @@ ELSE()
     include_directories(/encs/pkg/glm-0.9.9.8/root/include)
 
     # Add Assimp library path
-    link_directories(/opt/homebrew/Cellar/assimp/5.3.1/lib)
+    link_directories(./lib)
 
 ENDIF()
 
