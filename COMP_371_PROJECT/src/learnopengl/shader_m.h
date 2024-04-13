@@ -197,33 +197,7 @@ void build(const std::string& vertexFilepath, const std::string& fragmentFilepat
     {
         glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, &mat[0][0]);
     }
-    template<typename T>
-    void setVar(T var, std::string varname)
-    {
-        GLint location = glGetUniformLocation(programId, varname.c_str());
-        glUniform1f(location, var);
-    }
 
-    template <>
-    void setVar<glm::mat4>(glm::mat4 var, std::string varname)
-    {
-        GLint location = glGetUniformLocation(programId, varname.c_str());
-        glUniformMatrix4fv(location, 1, GL_FALSE, &var[0][0]);
-    }
-
-    template <>
-    void setVar<glm::vec3>(glm::vec3 var, std::string varname)
-    {
-        GLint location = glGetUniformLocation(programId, varname.c_str());
-        glUniform3fv(location, 1, &var[0]);
-    }
-
-    template <>
-    void setVar<glm::vec2>(glm::vec2 var, std::string varname)
-    {
-        GLint location = glGetUniformLocation(programId, varname.c_str());
-        glUniform2fv(location, 1, &var[0]);
-    }
 
 
 private:

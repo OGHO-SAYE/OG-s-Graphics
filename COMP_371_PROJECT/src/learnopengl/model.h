@@ -204,6 +204,9 @@ private:
 
 unsigned int TextureFromFile(const char *path, const string &directory, bool gamma)
 {
+
+    cout << "Loading texture: " << path << endl;
+    cout << "Directory: " << directory << endl;
     string filename = string(path);
     filename = directory + '/' + filename;
 
@@ -212,6 +215,7 @@ unsigned int TextureFromFile(const char *path, const string &directory, bool gam
 
     int width, height, nrComponents;
     unsigned char *data = stbi_load(filename.c_str(), &width, &height, &nrComponents, 0);
+    try {
     if (data)
     {
         GLenum format;
@@ -235,9 +239,12 @@ unsigned int TextureFromFile(const char *path, const string &directory, bool gam
     }
     else
     {
-        std::cout << "Texture failed to load at path: " << path << std::endl;
-        stbi_image_free(data);
+        throw std::runtime_error("Texture failed to load at path: " + std::string(path));
     }
+} catch(const std::exception& e) {
+    std::cout << "Error: " << e.what() << std::endl;
+}
+
 
     return textureID;
 }

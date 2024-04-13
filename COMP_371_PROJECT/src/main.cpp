@@ -111,7 +111,7 @@ int main()
 
     // load models
     // -----------
-    Model ourModel("../src/miniStadium/miniStadium.obj");
+    Model ourModel("../miniStadium/miniStadium.obj");
    
 
 
@@ -323,7 +323,10 @@ glEnableVertexAttribArray(0);
         lightShader.setMat4("view", camera.GetViewMatrix());
         lightShader.setMat4("model", cubemodel);
         glBindVertexArray(cubeLightVAO);
-        glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);      
+        glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
+
+
+      
 
         //draw cloudbox last
         glDepthFunc(GL_LEQUAL);  // change depth function so depth test passes when values are equal to depth buffer's content
