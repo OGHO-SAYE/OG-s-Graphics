@@ -1,6 +1,6 @@
 CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o: \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/learnopengl/stb_image.cpp \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/learnopengl/stb_image.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/stb_image.cpp \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/stb_image.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__config_site \

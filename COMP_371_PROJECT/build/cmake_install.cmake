@@ -1,4 +1,4 @@
-# Install script for directory: /Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT
+# Install script for directory: /Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

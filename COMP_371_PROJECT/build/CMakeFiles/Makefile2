@@ -54,10 +54,10 @@ RM = /opt/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT"
+CMAKE_SOURCE_DIR = "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build"
+CMAKE_BINARY_DIR = "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/footballpitch.dir/clean
 CMakeFiles/footballpitch.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/footballpitch.dir/build.make CMakeFiles/footballpitch.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/footballpitch.dir/build.make CMakeFiles/footballpitch.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build/CMakeFiles" --progress-num=1,2,3 "Built target footballpitch"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build/CMakeFiles" --progress-num=1,2,3 "Built target footballpitch"
 .PHONY : CMakeFiles/footballpitch.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/footballpitch.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build/CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build/CMakeFiles" 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/footballpitch.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build/CMakeFiles" 0
 .PHONY : CMakeFiles/footballpitch.dir/rule
 
 # Convenience name for target.

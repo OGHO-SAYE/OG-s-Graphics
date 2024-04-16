@@ -53,10 +53,10 @@ RM = /opt/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT"
+CMAKE_SOURCE_DIR = "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build"
+CMAKE_BINARY_DIR = "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/footballpitch.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/footballpitch.dir/progress.make
 include CMakeFiles/footballpitch.dir/flags.make
 
 CMakeFiles/footballpitch.dir/src/main.cpp.o: CMakeFiles/footballpitch.dir/flags.make
-CMakeFiles/footballpitch.dir/src/main.cpp.o: /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/main.cpp
+CMakeFiles/footballpitch.dir/src/main.cpp.o: /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/main.cpp
 CMakeFiles/footballpitch.dir/src/main.cpp.o: CMakeFiles/footballpitch.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/footballpitch.dir/src/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/footballpitch.dir/src/main.cpp.o -MF CMakeFiles/footballpitch.dir/src/main.cpp.o.d -o CMakeFiles/footballpitch.dir/src/main.cpp.o -c "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/src/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/footballpitch.dir/src/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/footballpitch.dir/src/main.cpp.o -MF CMakeFiles/footballpitch.dir/src/main.cpp.o.d -o CMakeFiles/footballpitch.dir/src/main.cpp.o -c "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/src/main.cpp"
 
 CMakeFiles/footballpitch.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/footballpitch.dir/src/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/src/main.cpp" > CMakeFiles/footballpitch.dir/src/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/src/main.cpp" > CMakeFiles/footballpitch.dir/src/main.cpp.i
 
 CMakeFiles/footballpitch.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/footballpitch.dir/src/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/src/main.cpp" -o CMakeFiles/footballpitch.dir/src/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/src/main.cpp" -o CMakeFiles/footballpitch.dir/src/main.cpp.s
 
 CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o: CMakeFiles/footballpitch.dir/flags.make
-CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o: /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/learnopengl/stb_image.cpp
+CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o: /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/stb_image.cpp
 CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o: CMakeFiles/footballpitch.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o -MF CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o.d -o CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o -c "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/src/learnopengl/stb_image.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o -MF CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o.d -o CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o -c "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/stb_image.cpp"
 
 CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/src/learnopengl/stb_image.cpp" > CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/stb_image.cpp" > CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.i
 
 CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/src/learnopengl/stb_image.cpp" -o CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/stb_image.cpp" -o CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.s
 
 # Object files for target footballpitch
 footballpitch_OBJECTS = \
@@ -112,7 +112,7 @@ footballpitch: /opt/homebrew/lib/libGLEW.2.2.0.dylib
 footballpitch: /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd
 footballpitch: /opt/local/lib/libglfw.3.3.dylib
 footballpitch: CMakeFiles/footballpitch.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable footballpitch"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable footballpitch"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/footballpitch.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +124,6 @@ CMakeFiles/footballpitch.dir/clean:
 .PHONY : CMakeFiles/footballpitch.dir/clean
 
 CMakeFiles/footballpitch.dir/depend:
-	cd "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT" "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT" "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build" "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build" "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/build/CMakeFiles/footballpitch.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT" "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT" "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build" "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build" "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/build/CMakeFiles/footballpitch.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/footballpitch.dir/depend
 

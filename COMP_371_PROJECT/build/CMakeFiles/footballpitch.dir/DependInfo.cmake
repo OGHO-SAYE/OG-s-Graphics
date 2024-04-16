@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/src/learnopengl/stb_image.cpp" "CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o" "gcc" "CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o.d"
-  "/Users/uoron/Desktop/WINTER24/COMP 371/COMP_371_PROJECT/src/main.cpp" "CMakeFiles/footballpitch.dir/src/main.cpp.o" "gcc" "CMakeFiles/footballpitch.dir/src/main.cpp.o.d"
+  "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/stb_image.cpp" "CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o" "gcc" "CMakeFiles/footballpitch.dir/src/learnopengl/stb_image.cpp.o.d"
+  "/Users/uoron/Desktop/WINTER24/COMP 371/OG-s-Graphics/COMP_371_PROJECT/src/main.cpp" "CMakeFiles/footballpitch.dir/src/main.cpp.o" "gcc" "CMakeFiles/footballpitch.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.

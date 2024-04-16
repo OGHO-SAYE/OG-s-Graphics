@@ -1,5 +1,5 @@
 CMakeFiles/footballpitch.dir/src/main.cpp.o: \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/main.cpp \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__config \
@@ -855,7 +855,7 @@ CMakeFiles/footballpitch.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/os/availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h \
   /opt/homebrew/include/GLFW/glfw3.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/learnopengl/stb_image.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/stb_image.h \
   /opt/homebrew/include/glm/glm.hpp \
   /opt/homebrew/include/glm/detail/_fixes.hpp \
   /opt/homebrew/include/glm/detail/setup.hpp \
@@ -1111,7 +1111,7 @@ CMakeFiles/footballpitch.dir/src/main.cpp.o: \
   /opt/homebrew/include/glm/gtc/../mat4x2.hpp \
   /opt/homebrew/include/glm/gtc/../mat4x3.hpp \
   /opt/homebrew/include/glm/gtc/type_ptr.inl \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/learnopengl/shader_m.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/shader_m.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
@@ -1133,38 +1133,38 @@ CMakeFiles/footballpitch.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/sstream \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/learnopengl/camera.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/learnopengl/model.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/Importer.hpp \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/types.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/defs.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/vector3.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/./Compiler/pushpack1.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/./Compiler/poppack1.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/vector2.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/color4.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/matrix3x3.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/matrix4x4.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/quaternion.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/vector2.inl \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/vector3.inl \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/color4.inl \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/quaternion.inl \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/matrix3x3.inl \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/matrix4x4.inl \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/config.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/scene.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/texture.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/mesh.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/light.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/camera.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/material.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/material.inl \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/anim.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/metadata.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/assimp/postprocess.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/learnopengl/mesh.h \
-  /Users/uoron/Desktop/WINTER24/COMP\ 371/COMP_371_PROJECT/src/learnopengl/shader.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/camera.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/model.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/Importer.hpp \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/types.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/defs.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/vector3.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/./Compiler/pushpack1.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/./Compiler/poppack1.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/vector2.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/color4.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/matrix3x3.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/matrix4x4.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/quaternion.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/vector2.inl \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/vector3.inl \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/color4.inl \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/quaternion.inl \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/matrix3x3.inl \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/matrix4x4.inl \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/config.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/scene.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/texture.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/mesh.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/light.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/camera.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/material.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/material.inl \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/anim.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/metadata.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/assimp/postprocess.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/mesh.h \
+  /Users/uoron/Desktop/WINTER24/COMP\ 371/OG-s-Graphics/COMP_371_PROJECT/src/learnopengl/shader.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/is_transparent.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/ranges_iterator_traits.h \

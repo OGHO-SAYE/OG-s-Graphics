@@ -51,6 +51,7 @@ float lastFrame = 0.0f;
 
 const float pi = std::acos(-1.0f);
 
+bool renderCloudbox = true; 
 
 
 int main()
@@ -325,9 +326,7 @@ glEnableVertexAttribArray(0);
         glBindVertexArray(cubeLightVAO);
         glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
 
-
-      
-
+            if(renderCloudbox){
         //draw cloudbox last
         glDepthFunc(GL_LEQUAL);  // change depth function so depth test passes when values are equal to depth buffer's content
         cloudboxShader.use();
@@ -341,7 +340,19 @@ glEnableVertexAttribArray(0);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
         glDepthFunc(GL_LESS); // set depth function back to default
+        }
+         else
+    {
+        // Update the position of the light source when in dark mode
+        float time = glfwGetTime();
+        float lightX = sin(time) * 40.0f; 
+        float lightZ = cos(time) * 20.0f;
+        cubeLightPosition = glm::vec3(lightX, cubeLightPosition.y, lightZ);
 
+        lightShader.use();
+        lightShader.setVec3("light.position", cubeLightPosition);
+       
+    }
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -372,6 +383,9 @@ void processInput(GLFWwindow *window)
         camera.ProcessKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
+        renderCloudbox = !renderCloudbox; // Toggle the state of the cloudbox rendering
+    
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
